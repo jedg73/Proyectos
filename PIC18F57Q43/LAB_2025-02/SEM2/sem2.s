@@ -1,6 +1,6 @@
 ;Profesor Kalun José Lau Gan
 ;Alumno Joaquin Davila Garcia 
-;Universidad Peruana de Ciencias aplicada (UPC)
+;Universidad Peruana de Ciencias aplicadas (UPC)
 ;Lenguaje usado Assembler
 ;Desarrollo de una compuerta NOT usando el PIC18F57Q43 usando los pines RA0 para el pulsador y RD0 para el LED
 
