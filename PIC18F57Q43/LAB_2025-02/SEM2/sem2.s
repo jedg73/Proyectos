@@ -2,7 +2,7 @@
 ;Alumno Joaquin Davila Garcia 
 ;Universidad Peruana de Ciencias aplicadas (UPC)
 ;Lenguaje usado Assembler
-;Desarrollo de una compuerta NOT usando el PIC18F57Q43 usando los pines RA0 para el pulsador y RD0 para el LED
+;Desarrollo de una compuerta NOT en el PIC18F57Q43 usando los pines RA0 para el pulsador y RD0 para el LED
 
 PROCESSOR 18F57Q43
 #include "cabecera.inc"
