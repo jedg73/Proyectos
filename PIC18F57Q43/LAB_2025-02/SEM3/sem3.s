@@ -1,3 +1,8 @@
+;Profesor Kalun José Lau Gan
+;Alumno Joaquin Davila Garcia 
+;Universidad Peruana de Ciencias aplicadas (UPC)
+;Lenguaje usado Assembler
+
 PROCESSOR 18F57Q43
 #include "cabecera.inc"
 
