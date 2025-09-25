@@ -6,6 +6,12 @@
    Se puede cambiar entre tres pantallas distintas usando el botón BOOT
    (GPIO0) del propio ESP32. También se incluyen mensajes de diagnóstico
    cuando no llegan datos NMEA o el flujo se detiene.
+
+   Conexiones rápidas:
+   - OLED: SDA -> GPIO21, SCL -> GPIO22, VCC -> 3V3, GND -> GND
+   - GPS:  TX del GPS -> RX2 GPIO16, RX del GPS -> TX2 GPIO17 (opcional),
+           VCC -> 5V, GND -> GND
+   - Botón BOOT (GPIO0) ya está en la placa, no necesitas cablearlo.
 */
 
 #include <Wire.h>
@@ -23,13 +29,13 @@ Adafruit_SSD1306 display(OLED_W, OLED_H, &Wire, -1);
 
 // ---- Configuración del GPS usando Serial2 ----
 static const uint32_t GPS_BAUD = 9600;
-static const int GPS_RX_PIN = 16; // RX2 del ESP32, aquí conectamos el TX del GPS
-static const int GPS_TX_PIN = 17; // TX2 del ESP32, opcional si quieres mandar datos al GPS
+static const int GPS_RX_PIN = 16; // aquí conectamos el TX del GPS
+static const int GPS_TX_PIN = 17; // opcional, si quieres enviar comandos al GPS
 TinyGPSPlus gps;
 
-// ---- Botón para cambiar de pantalla (usamos el BOOT del ESP32) ----
+// ---- Botón para cambiar de pantalla (usamos BOOT del ESP32) ----
 #define BTN_PIN 0
-volatile uint8_t page = 0;   // página actual en la pantalla
+volatile uint8_t page = 0;
 unsigned long lastBtnMs = 0;
 const unsigned long DEBOUNCE_MS = 180;
 
@@ -264,4 +270,3 @@ void loop() {
 
   delay(120); // refresco suave
 }
-
