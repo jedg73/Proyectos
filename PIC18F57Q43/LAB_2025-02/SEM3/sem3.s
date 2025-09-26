@@ -1,4 +1,3 @@
-;Profesor Kalun José Lau Gan
 ;Alumno Joaquin Davila Garcia 
 ;Universidad Peruana de Ciencias aplicadas (UPC)
 ;Lenguaje usado Assembler
