@@ -26,19 +26,19 @@ configuro:
     ;conf TMR0
     movlb 3H
     movlw 80H
-    movwf T0CON0, 1
+    movwf T0CON0, 1	;TMR0 enabled, 8bit mode, poste 1:1
     movlw 84H
-    movwf T0CON1, 1
+    movwf T0CON1, 1	;clksrc = LFINTOSC, sync, presc 1:64
     movlw 250
-    movwf TMR0H, 1
+    movwf TMR0H, 1	;valor de ref de comp 250
     ;conf E/S
     movlb 4H
-    bcf TRISC, 5, 1
-    bcf ANSELC, 5, 1
-    bcf ANSELB, 1, 1
-    bsf WPUB, 1, 1
-    bcf TRISD, 6, 1
-    bcf ANSELD, 6, 1
+    bcf TRISC, 5, 1	;RC5 como salida
+    bcf ANSELC, 5, 1	; RC5 como digital
+    bcf ANSELB, 1, 1	; RB1 como digital
+    bsf WPUB, 1, 1	;RB1 como pullup
+    bcf TRISD, 6, 1	;RD6  como salida
+    bcf ANSELD, 6, 1	;RD6 como digital
  
 inicio:
     btfsc PORTB, 1, 1
