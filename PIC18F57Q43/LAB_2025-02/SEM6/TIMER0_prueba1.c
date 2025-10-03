@@ -11,18 +11,18 @@ upcino:
 
 configuro:
     ;configuracion de la fuente de reloj
-    movlb 0H		;me voy al bank 0
+    movlb 0H		
     movlw 60H		
-    movwf OSCCON1, 1	;OSCCON1 60H
+    movwf OSCCON1, 1	
     movlw 02H
-    movwf OSCFRQ, 1	;OSCFRQ=02H
+    movwf OSCFRQ, 1	
     movlw 50H
     movwf OSCEN, 1	;OSCEN
     
     ;conf de PPS
     movlb 2H
     movlw 39H
-    movwf RC5PPS, 1
+    movwf RC5PPS, 1	;RC5 conectado a TMR0
     ;conf TMR0
     movlb 3H
     movlw 80H
