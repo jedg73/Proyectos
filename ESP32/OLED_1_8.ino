@@ -1,3 +1,26 @@
+/*
+ESP32 + TFT 1.8" ST7735 (SPI) – Pelota rebotando tipo DVD
+
+Muestra en pantalla un círculo que se mueve por toda la superficie del TFT,
+rebotando en los bordes y cambiando de color cada vez que colisiona.
+Solo se redibuja la zona de la pelota para reducir el parpadeo.
+
+Conexiones rápidas (ejemplo módulo TFT 1.8" ST7735):
+
+- TFT:
+    VCC  ↔ 3V3
+    GND  ↔ GND
+    LED  ↔ 3V3 (o pin con resistor si se quiere controlar el brillo)
+    SCK / SCL / CLK   ↔ GPIO18  (SCK VSPI)
+    SDA / MOSI / DIN  ↔ GPIO23  (MOSI VSPI)
+    CS                ↔ GPIO5
+    DC / RS / A0      ↔ GPIO16
+    RST / RESET       ↔ GPIO17
+
+  * El pin MISO del ESP32 (GPIO19) no se usa en este ejemplo.
+  * Asegúrate de que el módulo TFT sea compatible con 3V3 en las señales.
+*/
+
 #include <Adafruit_GFX.h>
 #include <Adafruit_ST7735.h>
 #include <SPI.h>
